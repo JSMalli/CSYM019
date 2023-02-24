@@ -1,3 +1,10 @@
+body {
+    display: grid;
+    grid-template-columns: 20% 60% 20%;
+    grid-template-rows: auto;
+    grid-template-areas: "header header header"
+   }
+
 header {
     background-color: blue;
     color: white;
@@ -22,3 +29,5 @@ header {
     color: white;
     grid-area: footer;
    }
+
+

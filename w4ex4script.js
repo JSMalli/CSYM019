@@ -1,8 +1,8 @@
 function myLoadFunction() {
-    var element = document.getElementById('pageheading');
-    element.firstChild.nodeValue = 'New Heading';
+    var element1 = document.getElementById('pageheading');
+    element1.firstChild.nodeValue = 'New Heading';
 
-    var element = document.getElementById('paragraph'); element.firstChild.nodeValue = 'New paragraph text';
+    var element2 = document.getElementById('paragraph'); element2.firstChild.nodeValue = 'New paragraph text';
    }
 
 

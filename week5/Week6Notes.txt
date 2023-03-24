@@ -1,0 +1,95 @@
+Week 6 (continuing from wk 5) notes
+
+var timer = setInterval(moveLeft,10);
+clearInterval(timer);
+
+///variable scope
+
+var myVariable = 0;
+
+function myClickEvent(){
+    myVariable=myVariable+1;
+    console.log(myVariable);
+}
+
+function myLoadEvent() {
+    document.addEventListener('click',myClickEvent);
+}
+
+document.addEventListener('DOMContentLoaded',myLoadEvent);
+
+
+
+//JSON
+
+var module = {
+"course":"MSc Computing",
+"moduleCode":"CSYM019",
+"tutor":"Tom Butler"
+}
+
+alert(module.tutor); //prints Tom Butler
+alert(module.moduleCode);
+
+
+//nested
+
+
+var module = {
+    "course":"MSc Computing",
+    "moduleCode":"CSYM019",
+    "tutor":{
+       "firstname":"Tom", 
+       "surname":"Butler",
+
+            }
+        }
+    
+    alert(module.tutor.firstname);
+
+    //arrays
+
+    var modules = [
+        'CSYM017'
+        'CSYM018'
+        'CSYM019'
+    ];
+
+    alert(modules[0]); //CSYM017
+    alert(modules[1]); //CSYM018
+    alert(modules[2]); //CSYM019
+
+    //array of objects
+
+    var modules = [
+    {
+        "name": "Internet Programming",
+        "code": "CSYM019"
+    }
+    {
+        "name": "Databases",
+        "code": "CSYM017"
+    }
+    ];
+
+    alert(modules[0,1]);
+
+//elements inside arrays
+    var course = {
+        "name":"MSc Computing",
+        "modules" : [
+            {
+                "name": "Internet Programming",
+                "code": "CSYM019"
+            }
+            {
+                "name": "Databases",
+                "code": "CSYM017"
+            }
+            ]
+    };
+
+    alert(course.modules[1].name);
+    alert(course.modules[0].code);
+
+    

@@ -5,10 +5,6 @@
 
 }*/
 
-function moveleft() {
-    var element=document.getElementById('circle')
-    var positionLeft = element.offsetLeft;
-    element.style.left = parseInt(positionLeft) - 1 + 'px';
 
 }
 

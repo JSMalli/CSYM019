@@ -1,0 +1,128 @@
+functionmake makeAjaxRequest() {
+    if (window.XMLHttpRequest) {
+        xhr =new XMLHttpRequest();
+    }
+    else {
+        if (window.ActiveXObject) {
+            xhr = new ActiveXObject("Microsoft.XMLHTTP");
+        }
+    }
+}
+
+//to alert the user
+
+function makeAjaxRequest() {
+    ...
+
+    if (xhr) {
+        xhr.open("GET", "counties.json",true);
+        xhr.send();
+        xhr.onreadystatechange = showContents;
+    }
+    else {
+        document.getElementById("updatemessage").innerHTML = "Could not perform stated Request";
+    }
+}
+
+//configure XMLHttpRequest Object
+
+xhr.open("GET", "counties.xml", true);
+
+//send XMLHttpRequest Object
+
+xhr.send();
+
+//processing server data
+
+if (xhr) {
+    xhr.open("GET", "counties.xml", true);
+    xhr.send();
+    xhr.onreadystatechange = showContents;
+}
+else {
+    document.getElementById("updatemessage).innerHTML= "Error";
+}
+
+//XMLHttpRequest status
+
+function showContents() {
+    if (xhr.readyState == 4) {
+        if(xhr.status == 200) {
+            //Process Data
+        }
+        else {
+            //Display Error
+        }
+    }
+}
+
+//Get data from Ajax Request
+
+function showContents() {
+    if (xhr.readyState == 4) {
+        if(xhr.status == 200) {
+            let myVariable = xhr.responseText;
+                }
+        else {
+            //Display Error
+        }
+    }
+}
+
+//process an Ajax JSON Request
+if (xhr.readyState == 4) {
+        if(xhr.status == 200) {
+            let data = JSON.parse(xhr.responseText);
+            let txt="";
+            for (let i in data.counties) {
+                txt += "<tr><td>" +
+                data.counties[i].name +
+                "</td></tr>"
+            }
+                }
+        else {
+            //Display Error
+        }
+    }
+
+//updating the DOMContentLoaded
+function showContents() {
+    if (xhr.readyState == 4) {
+        if(xhr.status == 200) {
+        let data = JSON.parse(xhr.responseText);
+            let txt="";                }
+             for (let i=0, i< in data.counties.length; i++) {
+                txt += "<tr><td>" + data.counties[i].name + "</td></tr>"
+           }
+               document.getElementById("countyList).innerHTML=txt;
+
+   //     else {
+   //         document.getElementById("updatemessage")..           error occured: ....
+   //     }
+  //  }
+//}
+
+//process JSON with jQuery
+$.ajax({
+    url: "counties.json",
+    type: "GET",
+    dataType: "json"
+    success" function(response) {
+        //process data and update DOM
+    },
+    error: function() {
+        //display errors
+    }
+});
+
+//process JSON with jQuery
+success: function(response) {
+
+    let sTxt= "";
+    $.each(response.counties, function(index) {
+        sTxt += "<tr><td>"
+        + response.counties[index].name
+        + "</td></tr>";
+    });
+    //$("#countyList.....)
+}

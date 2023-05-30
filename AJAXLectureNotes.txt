@@ -106,8 +106,8 @@ function showContents() {
 $.ajax({
     url: "counties.json",
     type: "GET",
-    dataType: "json"
-    success" function(response) {
+    dataType: "json",
+    success: function(response) {
         //process data and update DOM
     },
     error: function() {
@@ -117,12 +117,11 @@ $.ajax({
 
 //process JSON with jQuery
 success: function(response) {
-
     let sTxt= "";
     $.each(response.counties, function(index) {
         sTxt += "<tr><td>"
         + response.counties[index].name
         + "</td></tr>";
     });
-    //$("#countyList.....)
-}
+    $("#countyList").append(sTxt);
+},

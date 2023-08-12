@@ -14,7 +14,7 @@ function myLoadFunction() {
                     "blue",
                     "yellow",
                     "green",
-                    "purpple",
+                    "purple",
                     "orange",
                     "black",
                     "white"
